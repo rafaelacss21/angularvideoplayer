@@ -10,7 +10,6 @@
     "build:prod": "ng build --prod",
     "build:integration": "ng build --configuration=integration",
     "build:env": "node config/build-env.js",
-    
     "copy:heroku": "shx cp -r ./config/heroku/*.* ./dist",
     "copy:domain": "shx cp CNAME ./dist",
     "copy:package": "shx cp ./package.json ./dist/assets/",
@@ -21,10 +20,12 @@
     "e2e": "ng e2e",
     "clean": "rimraf -- node_modules",
     "server:prod": "http-server ./dist -a localhost -p 4200",
-    "heroku-postbuild": "ng build --prod"
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "1.4.9",
+    "@angular/compiler-cli": "^4.4.6",
     "@angular-devkit/core": "0.0.29",
     "@angular/animations": "6.1.9",
     "@angular/common": "6.1.9",
@@ -51,9 +52,9 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.6.8",
-    "@angular/cli": "^6.2.3",
+    "@angular/cli": "1.4.9",
     "@angular/compiler": "^6.1.9",
-    "@angular/compiler-cli": "^6.1.9",
+    "@angular/compiler-cli": "^4.4.6",
     "@angular/language-service": "6.1.9",
     "@fortawesome/fontawesome-free": "5.4.2",
     "@ngrx/effects": "6.1.0",
@@ -67,6 +68,7 @@
     "@types/jasminewd2": "~2.0.2",
     "bootstrap-sass": "3.4.1",
     "codelyzer": "^4.0.1",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
@@ -89,7 +91,6 @@
     "tslint": "~5.9.1",
     "typescript": "2.9.2"
   },
-  
   "engines": {
     "node": "~11.10.0",
     "npm": "~6.7.0"
