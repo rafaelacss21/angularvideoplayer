@@ -21,7 +21,7 @@
     "e2e": "ng e2e",
     "clean": "rimraf -- node_modules",
     "server:prod": "http-server ./dist -a localhost -p 4200",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
